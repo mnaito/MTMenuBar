@@ -1,5 +1,4 @@
-UIMenuBar
-=========
+
 #Description
     iOS menu bar , a UIActionSheet replacement. It can contain more than 6 buttons, ->
     when the button quantities greater than 6, it will seprate them into pages, you can ->
