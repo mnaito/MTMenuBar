@@ -59,7 +59,7 @@
 
 - (void)setItems:(NSMutableArray *)items
 {
-    for(UIMenuBarItem *item in _items){
+    for(MTMenuBarItem *item in _items){
         [item.containView removeFromSuperview];
     }
     
@@ -159,7 +159,7 @@
         for(int index = (page * 6); index < (page * 6 + 6); index++){
 
             if(index == _items.count) break;            
-            UIMenuBarItem *item = (UIMenuBarItem *)[_items objectAtIndex:index];
+            MTMenuBarItem *item = (MTMenuBarItem *)[_items objectAtIndex:index];
             
             int relativeIndex = index - (page * 6);
             int row = relativeIndex/3 < 1? 0 : 1;

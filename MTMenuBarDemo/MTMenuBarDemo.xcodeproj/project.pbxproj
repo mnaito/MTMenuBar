@@ -281,7 +281,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UIMenuBarDemo/MTMenuBarDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "MTMenuBarDemo/MTMenuBarDemo-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -316,7 +316,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "UIMenuBarDemo/MTMenuBarDemo-Prefix.pch";
+				GCC_PREFIX_HEADER = "MTMenuBarDemo/MTMenuBarDemo-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
