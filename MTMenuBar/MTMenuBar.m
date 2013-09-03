@@ -9,7 +9,11 @@
 #import "MTMenuBar.h"
 #import <QuartzCore/QuartzCore.h>
 
-#define kSemiModalAnimationDuration 0.3f
+#define kSemiModalAnimationDuration 0.25f
+
+#define kModalOverlayBGRed .16
+#define kModalOverlayBGGreen .17
+#define kModalOverlayBGBlue .21
 
 @interface MTMenuBar ()
 
@@ -236,12 +240,16 @@
         
         // Add semi overlay
         UIView * overlay = [[UIView alloc] initWithFrame:keywindow.bounds];
-        overlay.backgroundColor = [UIColor colorWithRed:.16 green:.17 blue:.21 alpha:.6]; 
+        overlay.backgroundColor = [UIColor colorWithRed:kModalOverlayBGRed green:kModalOverlayBGGreen blue:kModalOverlayBGBlue alpha:0];
         
         UIView* ss = [[UIView alloc] initWithFrame:keywindow.bounds];
         [overlay addSubview:ss];
         [keywindow addSubview:overlay];
-        
+
+        [UIView animateWithDuration:kSemiModalAnimationDuration/2 animations:^{
+			overlay.backgroundColor = [UIColor colorWithRed:kModalOverlayBGRed green:kModalOverlayBGGreen blue:kModalOverlayBGBlue alpha:.6];
+		}];
+		
         UIControl * dismissButton = [[UIControl alloc] initWithFrame:CGRectZero];
         [dismissButton addTarget:self action:@selector(_dismissModalView) forControlEvents:UIControlEventTouchUpInside];
         dismissButton.backgroundColor = [UIColor clearColor];
@@ -271,6 +279,11 @@
     UIWindow * keywindow = [[UIApplication sharedApplication] keyWindow];
     UIView * modal = [keywindow.subviews objectAtIndex:keywindow.subviews.count-1];
     UIView * overlay = [keywindow.subviews objectAtIndex:keywindow.subviews.count-2];
+	
+	[UIView animateWithDuration:kSemiModalAnimationDuration/2 animations:^{
+		overlay.backgroundColor = [UIColor colorWithRed:kModalOverlayBGRed green:kModalOverlayBGGreen blue:kModalOverlayBGBlue alpha:0];
+	}];
+	
     [UIView animateWithDuration:kSemiModalAnimationDuration animations:^{
         modal.frame = CGRectMake(0, keywindow.frame.size.height, modal.frame.size.width, modal.frame.size.height);
     } completion:^(BOOL finished) {
