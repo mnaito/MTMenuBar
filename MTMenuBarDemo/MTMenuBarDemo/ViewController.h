@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "UIMenuBar.h"
+#import "MTMenuBar.h"
 
-@interface ViewController : UIViewController <UIMenuBarDelegate>
+@interface ViewController : UIViewController <MTMenuBarDelegate>
 {
-    UIMenuBar *menuBar;
+    MTMenuBar *menuBar;
 }
 
 @end

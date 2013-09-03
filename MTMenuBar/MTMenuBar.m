@@ -6,12 +6,12 @@
 //  Copyright (c) 2013年 su xinde. All rights reserved.
 //
 
-#import "UIMenuBar.h"
+#import "MTMenuBar.h"
 #import <QuartzCore/QuartzCore.h>
 
 #define kSemiModalAnimationDuration 0.3f
 
-@interface UIMenuBar ()
+@interface MTMenuBar ()
 
 - (void)_initCommonUI;
 - (void)_resetSubViewsLayout;
@@ -22,7 +22,7 @@
 @end
 
 
-@implementation UIMenuBar
+@implementation MTMenuBar
 
 @synthesize delegate = _delegate;
 @synthesize items = _items;

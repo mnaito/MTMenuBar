@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'UIMenuBarDemo' target in the 'UIMenuBarDemo' project
+// Prefix header for all source files of the 'MTMenuBarDemo' target in the 'MTMenuBarDemo' project
 //
 
 #import <Availability.h>

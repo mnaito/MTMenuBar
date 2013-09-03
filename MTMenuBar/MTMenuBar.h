@@ -6,28 +6,24 @@
 //  Copyright (c) 2013年 su xinde. All rights reserved.
 //
 
-// UITabBar
-// UIToolbar
-// UINavigationBar
-
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "UIMenuBarItem.h"
+#import "MTMenuBarItem.h"
 
-@class UIMenuBar;
+@class MTMenuBar;
 
-@protocol UIMenuBarDelegate <NSObject>
+@protocol MTMenuBarDelegate <NSObject>
 @optional
-- (void)menuBar:(UIMenuBar *)menuBar didSelectAtIndex:(int)index;
+- (void)menuBar:(MTMenuBar *)menuBar didSelectAtIndex:(int)index;
 
 @end
 
-@interface UIMenuBar : UIView <UIScrollViewDelegate>//,UIAppearance>
+@interface MTMenuBar : UIView <UIScrollViewDelegate>//,UIAppearance>
 {
 @private
-    id<UIMenuBarDelegate>  _delegate;
+    id<MTMenuBarDelegate>  _delegate;
     NSMutableArray        *_items;
-    UIMenuBarItem         *_selectedItem;
+    MTMenuBarItem         *_selectedItem;
     UIColor               *_tintColor;
     
     NSInteger              _pages;                  
@@ -38,9 +34,9 @@
     CGSize                 _halfOriginalSize;
 }
 
-@property (nonatomic, assign) id<UIMenuBarDelegate> delegate;     // weak reference. default is nil
+@property (nonatomic, assign) id<MTMenuBarDelegate> delegate;     // weak reference. default is nil
 @property (nonatomic, copy)   NSMutableArray       *items;
-@property (nonatomic, assign) UIMenuBarItem        *selectedItem; // will show feedback based on mode. default is nil
+@property (nonatomic, assign) MTMenuBarItem        *selectedItem; // will show feedback based on mode. default is nil
 @property (nonatomic, retain) UIColor              *tintColor;    // Default is black.
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)items;

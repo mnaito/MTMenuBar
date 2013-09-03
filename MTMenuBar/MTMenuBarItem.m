@@ -6,17 +6,17 @@
 //  Copyright (c) 2013年 su xinde. All rights reserved.
 //
 
-#import "UIMenuBarItem.h"
+#import "MTMenuBarItem.h"
 #import <QuartzCore/QuartzCore.h>
 
-@interface UIMenuBarItem ()
+@interface MTMenuBarItem ()
 
 - (void)setup;
 - (void)layOutSubviews;
 
 @end
 
-@implementation UIMenuBarItem
+@implementation MTMenuBarItem
 
 @synthesize title = _title;
 @synthesize image = _image;

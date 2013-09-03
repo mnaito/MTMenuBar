@@ -8,10 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-// UIBarButtonItem
-// UITabBarItem
-
-@interface UIMenuBarItem : NSObject
+@interface MTMenuBarItem : NSObject
 {
     NSString    *_title;
     UIImage     *_image;

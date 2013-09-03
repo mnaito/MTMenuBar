@@ -1,6 +1,6 @@
 //
 //  main.m
-//  UIMenuBarDemo
+//  MTMenuBarDemo
 //
 //  Created by su xinde on 13-3-10.
 //
