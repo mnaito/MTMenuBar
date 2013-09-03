@@ -75,7 +75,7 @@
     _originalSize = self.frame.size;
     _halfOriginalSize = CGSizeMake(_originalSize.width, _originalSize.height/2.0f);
     
-    self.backgroundColor = (_tintColor = [[UIColor colorWithRed:0. green:0. blue:0. alpha:.5] retain]);
+    self.backgroundColor = (_tintColor = [UIColor colorWithRed:0. green:0. blue:0. alpha:.5]);
     //self.backgroundColor = [UIColor blackColor];
     _pages = (_items.count / 6) + (_items.count % 6 == 0 ? 0 : 1);
     
@@ -182,7 +182,6 @@
 
         [_containerScrollViews addObject:pageContent];
         [_containerView addSubview:pageContent];
-        [pageContent release];
     }
 }
 
@@ -206,11 +205,10 @@
 - (void)setTintColor:(UIColor *)tintColor
 {
     if(_tintColor){
-        [_tintColor release];
         _tintColor = nil;
     }
     
-    _tintColor = [tintColor retain];
+    _tintColor = tintColor;
     self.backgroundColor = _tintColor;
 }
 
@@ -290,13 +288,12 @@
 
 - (void)dealloc
 {
-    [_items release], _items = nil;
-    [_tintColor release], _tintColor = nil;
-    [_pageControl release], _pageControl = nil;
-    [_containerView release], _containerView = nil;
-    [_containerScrollViews release], _containerScrollViews = nil;
+    _items = nil;
+    _tintColor = nil;
+    _pageControl = nil;
+    _containerView = nil;
+    _containerScrollViews = nil;
     
-    [super dealloc];
 }
 @end
 

@@ -31,10 +31,10 @@
 {
     if(self = [super init]){
         
-        _title = [[NSString stringWithFormat:@"%@", title] retain];
-        _image = [[UIImage imageWithCGImage:image.CGImage] retain];
+        _title = [NSString stringWithFormat:@"%@", title];
+        _image = image;//[UIImage imageWithCGImage:image.CGImage];
         _action = action;
-        _target = [target retain];
+        _target = target;
         
         _containView = [[UIControl alloc] initWithFrame:CGRectZero];
         [_containView addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
@@ -42,10 +42,10 @@
         _imageView = [[UIImageView alloc] initWithImage:image];
 
         _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _titleLabel.textAlignment = UITextAlignmentCenter;
+        _titleLabel.textAlignment = ALIGN_CENTER;
         _titleLabel.backgroundColor = [UIColor clearColor];
         _titleLabel.textColor = [UIColor whiteColor];
-        _titleLabel.lineBreakMode = UILineBreakModeTailTruncation;
+        _titleLabel.lineBreakMode = LINEBREAK_TRUNC;
         _titleLabel.numberOfLines = 1;
         _titleLabel.font = [UIFont systemFontOfSize:13.f];
         _titleLabel.text = title;
@@ -107,13 +107,12 @@
 
 - (void)dealloc
 {
-    [_title release], _title = nil;
-    [_image release], _image = nil;
-    [_target release], _target = nil;
-    [_containView release], _containView = nil;
-    [_imageView release], _imageView = nil;
-    [_titleLabel release], _titleLabel = nil;
-    [super dealloc];
+    _title = nil;
+    _image = nil;
+    _target = nil;
+    _containView = nil;
+    _imageView = nil;
+    _titleLabel = nil;
 }
 
 @end

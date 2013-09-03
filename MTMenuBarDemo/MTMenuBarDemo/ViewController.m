@@ -23,7 +23,6 @@
     
     UIBarButtonItem *popMenuItem = [[UIBarButtonItem alloc] initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(popMenuAction:)];
     self.navigationItem.rightBarButtonItem = popMenuItem;
-    [popMenuItem release];
 }
 
 
@@ -45,7 +44,7 @@
     menuBar = [[MTMenuBar alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 240.0f) items:items];
     //menuBar.layer.borderWidth = 1.f;
     //menuBar.layer.borderColor = [[UIColor orangeColor] CGColor];
-    menuBar.tintColor = [UIColor orangeColor];
+    //menuBar.tintColor = [UIColor orangeColor];
     menuBar.delegate = self;
     
     [menuBar show];

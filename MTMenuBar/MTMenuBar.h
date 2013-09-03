@@ -21,9 +21,9 @@
 @interface MTMenuBar : UIView <UIScrollViewDelegate>//,UIAppearance>
 {
 @private
-    id<MTMenuBarDelegate>  _delegate;
+    id<MTMenuBarDelegate>  __weak _delegate;
     NSMutableArray        *_items;
-    MTMenuBarItem         *_selectedItem;
+    MTMenuBarItem         *__weak _selectedItem;
     UIColor               *_tintColor;
     
     NSInteger              _pages;                  
@@ -34,10 +34,10 @@
     CGSize                 _halfOriginalSize;
 }
 
-@property (nonatomic, assign) id<MTMenuBarDelegate> delegate;     // weak reference. default is nil
+@property (nonatomic, weak) id<MTMenuBarDelegate> delegate;     // weak reference. default is nil
 @property (nonatomic, copy)   NSMutableArray       *items;
-@property (nonatomic, assign) MTMenuBarItem        *selectedItem; // will show feedback based on mode. default is nil
-@property (nonatomic, retain) UIColor              *tintColor;    // Default is black.
+@property (nonatomic, weak) MTMenuBarItem        *selectedItem; // will show feedback based on mode. default is nil
+@property (nonatomic, strong) UIColor              *tintColor;    // Default is black.
 
 - (id)initWithFrame:(CGRect)frame items:(NSArray *)items;
 - (void)setItems:(NSMutableArray *)items;

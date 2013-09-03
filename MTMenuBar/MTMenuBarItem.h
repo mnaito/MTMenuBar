@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0
+#define ALIGN_CENTER NSTextAlignmentCenter
+#define LINEBREAK_TRUNC NSLineBreakByTruncatingTail
+#else
+#define ALIGN_CENTER UITextAlignmentCenter
+#define LINEBREAK_TRUNC UILineBreakModeTailTruncation
+#endif
+
 @interface MTMenuBarItem : NSObject
 {
     NSString    *_title;
@@ -21,9 +29,9 @@
 }
 
 @property (nonatomic) SEL action;
-@property (nonatomic, retain, readonly) NSString *title;
-@property (nonatomic, retain, readonly) UIImage *image;
-@property (nonatomic, retain) UIControl *containView;
+@property (nonatomic, strong, readonly) NSString *title;
+@property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong) UIControl *containView;
 @property (nonatomic, readonly) CGFloat sizeValue;
 
 - (id)initWithTitle:(NSString *)title
